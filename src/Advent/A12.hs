@@ -3,15 +3,16 @@
 
 {-# LANGUAGE OverloadedStrings #-}
 
-module A12 where
+module Advent.A12 where
 
 import Control.Lens (sumOf, cosmosOf, plate, filtered)
 import Data.Aeson (Value(..), decodeFileStrict')
 import Data.Aeson.Lens (_Number)
+import Data.Scientific (Scientific)
 
-main :: IO ()
-main = getArgs >>= traverse_ go where
-    go path = decodeFileStrict' path >>= print . (path,) . fmap mk
+solve :: FilePath -> IO (Maybe (Scientific,Scientific))
+solve path = decodeFileStrict' path <&> fmap mk
+  where
     mk v = (one v, two v)
     one = tally plate
     two = tally (plate . filtered nonred)

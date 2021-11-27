@@ -70,10 +70,12 @@ common shared -- {{{
     ViewPatterns
   -- }}}
 
-executable a12
+library
   import: shared
-  main-is: a12.hs
-  ghc-options: -main-is A12
+  hs-source-dirs: src
+  exposed-modules: Advent
+  other-modules:
+   , Advent.A12
   build-depends:
    , aeson
    , lens
