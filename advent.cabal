@@ -76,9 +76,12 @@ library
   exposed-modules: Advent
   other-modules:
    , Advent.A01
+   , Advent.A02
    , Advent.A12
   build-depends:
    , aeson
    , lens
    , lens-aeson
    , scientific
+   , split
+   , strict
