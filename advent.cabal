@@ -77,11 +77,14 @@ library
   other-modules:
    , Advent.A01
    , Advent.A02
+   , Advent.A03
    , Advent.A12
   build-depends:
    , aeson
+   , containers
    , lens
    , lens-aeson
+   , unordered-containers
    , scientific
    , split
    , strict
