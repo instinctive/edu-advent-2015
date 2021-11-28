@@ -75,6 +75,7 @@ library
   hs-source-dirs: src
   exposed-modules: Advent
   other-modules:
+   , Advent.A01
    , Advent.A12
   build-depends:
    , aeson
